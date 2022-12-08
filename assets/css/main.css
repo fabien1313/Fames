@@ -32,28 +32,31 @@ overflow-wrap: break-word;
 
 /* ============= HTML =============== */
 :root {
-    --windowColor: rgba(255, 255, 255, 0.507);
-    --bgColor: rgb(151, 189, 204, 0.589);
+    --windowColor: rgba(255, 255, 255, 0.185);
+    --bgColor: rgb(70, 102, 143);
     --borderColor: rgb(0, 0, 0);
     --hoverColor: rgb(255, 255, 0);
     --white: rgb(255, 255, 255);
     --red: crimson;
+    --blue: rgba(0, 153, 255, 0.616);
+    --green: rgb(72, 235, 72);
     --sideNav: rgb(132, 163, 132);
     --headerColor: rgb(96, 115, 136);
 }
 
 body {
-    background-color: var(--bgcolor);
+    background-color: var(--bgColor);
     display: grid;
     /* grid-template-rows: 15fr 70fr 15fr; */
     /* grid-template-columns: 15fr 85fr; */
     /* grid-template is the same way to write the above */
-    grid-template: 15fr 70fr 15fr / 15fr 85fr;
+    grid-template: 15fr 75fr 10fr / 15fr 85fr;
     grid-template-areas: 
     /*      1       2 */
     /*1*/   "header  header"
     /*2*/   "sideNav main"
     /*3*/   "footer  footer";
+    gap: 5px;
 }
 
 
@@ -63,6 +66,7 @@ body {
     grid-area: header;
     background-color: var(--headerColor);
     display: grid;
+    border: 2px solid black;
 }
 .title {
     display: flex;
@@ -75,30 +79,75 @@ body {
 /* ============= SIDENAV =============== */
 .sideNav {
     grid-area: sideNav;
-    background-color: var(--sideNav);
+    background-color: var(--windowColor);
+    border: 2px solid black;
 }
 
 
+
 /* ============= MAIN =============== */
-.main{height: 100%;}
+.main{
+    display: grid;
+    grid-template-columns: 100fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    /*      1     
+    /*1*/   "top"
+    /*2*/   "tiles";
+    gap: 5px;
+    height: 100fr;
+    align-items: center;
+}
+.top{
+    grid-area: top;
+    text-align: center;
+    background-color: var(--blue);
+    border: 2px solid black;
+}
 .tiles {
     list-style: none;
     height: 100%;
-    background-color: rgb(70, 102, 143);
     display: grid;
     grid-template-columns: 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr;
-    grid-template-rows:  10% auto auto auto auto auto;
-    gap: 3px;
+    grid-template-rows: 5fr 16fr 16fr 16fr 16fr 16fr;
+    gap: 5px;
     grid-template-areas:
     /*      1   2   3   4   5   6   7       */
-    /*1*/  "top top top top top top top"
+    /*1*/  "sun mon tue wed thu fri sat"
     /*2*/  "t01 t02 t03 t04 t05 t06 t07" 
     /*3*/  "t08 t09 t10 t11 t12 t13 t14"     
     /*4*/  "t15 t16 t17 t18 t19 t20 t21"
     /*5*/  "t22 t23 t24 t25 t26 t27 t28"
     /*6*/  "t29 t30 t31 t32 t33 t34 t35";
 }
-.top{grid-area: top;}
+.days{
+    background-color: var(--green);
+    border: 2px solid black;
+    padding: 1px;
+    align-items: center;
+}
+.tile {
+    background-color: var(--windowColor);
+    border: 2px solid black;
+    padding: 10px;
+}
+.tile:hover {
+    cursor: pointer;
+    text-decoration: none;
+    border: 3px solid var(--borderColor);
+    box-shadow: 1px 1px 5px 1px;
+}
+.sun, .mon, .tue, .wed, .thu, .fri, .sat {
+    width: 100%;
+    text-align: center;
+}
+.sun{grid-area: sun;}
+.mon{grid-area: mon;}
+.tue{grid-area: tue;}
+.wed{grid-area: wed;}
+.thu{grid-area: thu;}
+.fri{grid-area: fri;}
+.sat{grid-area: sat;}
 .t01{grid-area: t01;}
 .t02{grid-area: t02;}
 .t03{grid-area: t03;}
@@ -135,13 +184,21 @@ body {
 .t34{grid-area: t34;}
 .t35{grid-area: t35;}
 
-.tile {
-    background-color: var(--windowColor);
-}
 
+
+
+/* ============= FOOTER =============== */
 .footer {
     grid-area: footer;
     background-color: var(--headerColor);
+    border: 2px solid black;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-    
-
+.fabien {margin-right: 75px;}
+.james{margin-left: 75px;}
+.fabien:hover, .james:hover {
+    color: white;
+}
