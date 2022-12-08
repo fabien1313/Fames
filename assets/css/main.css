@@ -1,0 +1,150 @@
+/* My styling reset */
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+  }
+
+* {
+margin: 0;
+padding: 0;
+}
+
+html, body {
+height: 100vh;
+}
+
+body {
+line-height: 1.5;
+-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+/*^^^My styling reset^^^*/
+
+
+/* ============= HTML =============== */
+:root {
+    --windowColor: rgba(255, 255, 255, 0.507);
+    --bgColor: rgb(151, 189, 204, 0.589);
+    --borderColor: rgb(0, 0, 0);
+    --hoverColor: rgb(255, 255, 0);
+    --white: rgb(255, 255, 255);
+    --red: crimson;
+    --sideNav: rgb(132, 163, 132);
+    --headerColor: rgb(96, 115, 136);
+}
+
+body {
+    background-color: var(--bgcolor);
+    display: grid;
+    /* grid-template-rows: 15fr 70fr 15fr; */
+    /* grid-template-columns: 15fr 85fr; */
+    /* grid-template is the same way to write the above */
+    grid-template: 15fr 70fr 15fr / 15fr 85fr;
+    grid-template-areas: 
+    /*      1       2 */
+    /*1*/   "header  header"
+    /*2*/   "sideNav main"
+    /*3*/   "footer  footer";
+}
+
+
+
+/* ============= HEADER =============== */
+.header {
+    grid-area: header;
+    background-color: var(--headerColor);
+    display: grid;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* ============= SIDENAV =============== */
+.sideNav {
+    grid-area: sideNav;
+    background-color: var(--sideNav);
+}
+
+
+/* ============= MAIN =============== */
+.main{height: 100%;}
+.tiles {
+    height: 100%;
+    background-color: rgb(70, 102, 143);
+    display: grid;
+    grid-template-columns: 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr 12.5fr;
+    grid-template-rows:  10% auto auto auto auto auto;
+    gap: 3px;
+    grid-template-areas:
+    /*      1   2   3   4   5   6   7       */
+    /*1*/  "top top top top top top top"
+    /*2*/  "t01 t02 t03 t04 t05 t06 t07" 
+    /*3*/  "t08 t09 t10 t11 t12 t13 t14"     
+    /*4*/  "t15 t16 t17 t18 t19 t20 t21"
+    /*5*/  "t22 t23 t24 t25 t26 t27 t28"
+    /*6*/  "t29 t30 t31 t32 t33 t34 t35";
+}
+.top{grid-area: top;}
+.t01{grid-area: t01;}
+.t02{grid-area: t02;}
+.t03{grid-area: t03;}
+.t04{grid-area: t04;}
+.t05{grid-area: t05;}
+.t06{grid-area: t06;}
+.t07{grid-area: t07;}
+.t08{grid-area: t08;}
+.t09{grid-area: t09;}
+.t10{grid-area: t10;}
+.t11{grid-area: t11;}
+.t12{grid-area: t12;}
+.t13{grid-area: t13;}
+.t14{grid-area: t14;}
+.t15{grid-area: t15;}
+.t16{grid-area: t16;}
+.t17{grid-area: t17;}
+.t18{grid-area: t18;}
+.t19{grid-area: t19;}
+.t20{grid-area: t20;}
+.t21{grid-area: t21;}
+.t22{grid-area: t22;}
+.t23{grid-area: t23;}
+.t24{grid-area: t24;}
+.t25{grid-area: t25;}
+.t26{grid-area: t26;}
+.t27{grid-area: t27;}
+.t28{grid-area: t28;}
+.t29{grid-area: t29;}
+.t30{grid-area: t30;}
+.t31{grid-area: t31;}
+.t32{grid-area: t32;}
+.t33{grid-area: t33;}
+.t34{grid-area: t34;}
+.t35{grid-area: t35;}
+
+.tiles {
+    list-style: none;
+}
+
+.tile {
+    background-color: var(--windowColor);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: var(--headerColor);
+}
+    
+
