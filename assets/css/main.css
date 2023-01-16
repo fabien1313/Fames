@@ -30,7 +30,7 @@ p, h1, h2, h3, h4, h5, h6 {
     --hoverColor: rgb(255, 255, 0);
     --white: rgb(255, 255, 255);
     --red: crimson;
-    --blue: rgba(0, 153, 255, 0.616);
+    --blue: rgba(34, 166, 255, 0.801);
     --green: rgb(72, 235, 72);
     --sideNav: rgb(132, 163, 132);
     --headerColor: rgb(96, 115, 136);
@@ -85,8 +85,15 @@ body {
     background-color: var(--blue);
     border: 2px solid black;
 }
-.topContainer h2, .topContainer h3 {
+.topContainer h1 {
+    font-size: 28px;
+    margin: 0px 10px 0px 10px;
+} 
+.topContainer h3 {
     margin: 0px 40px 0px 40px;
+}
+.navigateIcons {
+    font-size: 24px;
 }
 .weekdaysContainer {
     display: flex;
