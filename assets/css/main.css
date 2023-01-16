@@ -77,7 +77,7 @@ body {
     margin-right: 5px;
     gap: 4px;
 }
-.topContainer {
+.topContainer, .monthContainer {
     grid-area: top;
     display: flex;
     justify-content: center;
@@ -85,11 +85,11 @@ body {
     background-color: var(--blue);
     border: 2px solid black;
 }
-.topContainer h1 {
+.topContainer h1, .monthContainer h1 {
     font-size: 28px;
     margin: 0px 10px 0px 10px;
 } 
-.topContainer h3 {
+.topContainer h3, .monthContainer h3 {
     margin: 0px 40px 0px 40px;
 }
 .navigateIcons {
@@ -122,6 +122,9 @@ body {
     background-color: var(--windowColor);
     border: 2px solid black;
     padding: 5px;
+}
+.todayDates {
+    background-color: rgb(0, 119, 255);
 }
 .dates:hover {
     cursor: pointer;
