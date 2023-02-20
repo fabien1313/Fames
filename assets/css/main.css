@@ -1,0 +1,151 @@
+/* My styling reset */
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+  }
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    line-height: 1.5;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/*^^^My styling reset^^^*/
+
+/* ============= HTML =============== */
+:root {
+    --windowColor: rgba(255, 255, 255, 0.185);
+    --bgColor: rgb(70, 102, 143);
+    --borderColor: rgb(0, 0, 0);
+    --hoverColor: rgb(255, 255, 0);
+    --white: rgb(255, 255, 255);
+    --red: crimson;
+    --blue: rgba(34, 166, 255, 0.801);
+    --green: rgb(72, 235, 72);
+    --sideNav: rgb(132, 163, 132);
+    --headerColor: rgb(96, 115, 136);
+}
+body {
+    background-color: var(--bgColor);
+    display: grid;
+    /* grid-template-rows: 15fr 70fr 15fr; */
+    /* grid-template-columns: 15fr 85fr; */
+    /* grid-template is the same way to write the above */
+    grid-template: 15fr 75fr 10fr / 15fr 85fr;
+    grid-template-areas: 
+    /*      1       2 */
+    /*1*/   "header  header"
+    /*2*/   "sideNav main"
+    /*3*/   "footer  footer";
+    gap: 5px;
+}
+/* ============= HEADER =============== */
+.header {
+    grid-area: header;
+    background-color: var(--headerColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    margin: 5px 5px 0px 5px;
+}
+.title {
+
+}
+/* ============= SIDENAV =============== */
+.sideNav {
+    grid-area: sideNav;
+    background-color: var(--windowColor);
+    border: 2px solid black;
+    margin-left: 5px;
+}
+/* ============= MAIN =============== */
+.main{
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5px;
+    gap: 4px;
+}
+.topContainer, .monthContainer {
+    grid-area: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    border: 2px solid black;
+}
+.topContainer h1, .monthContainer h1 {
+    font-size: 28px;
+    margin: 0px 10px 0px 10px;
+} 
+.topContainer h3, .monthContainer h3 {
+    margin: 0px 40px 0px 40px;
+}
+.navigateIcons {
+    font-size: 24px;
+}
+.weekdaysContainer {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 5px;
+    
+}
+.weekdays {
+    background-color: var(--green);
+    width: 14%;
+    border: 2px solid black;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+}
+.datesContainer {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    height: 100%;
+    list-style: none;
+    gap: 5px;
+}
+/* These are the loop generated divs */
+.dates {
+    background-color: var(--windowColor);
+    border: 2px solid black;
+    padding: 5px;
+}
+.todayDates {
+    background-color: rgb(0, 119, 255);
+}
+.dates:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--borderColor);
+    border: 2px solid var(--borderColor);
+    box-shadow: 1px 1px 3px 1px;
+}
+/* ============= FOOTER =============== */
+.footer {
+    grid-area: footer;
+    background-color: var(--headerColor);
+    border: 2px solid black;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 5px 5px 5px;
+}
+.fabien {margin-right: 75px;}
+.james{margin-left: 75px;}
+.fabien:hover, .james:hover {
+    color: white;
+}
